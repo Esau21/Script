@@ -17,7 +17,6 @@ class Filefix implements ToCollection, WithHeadingRow
     public function collection(Collection $collection)
     {
         DB::beginTransaction();
-
         
         foreach ($collection as $item) {
             $document = DB::selectOne("SELECT * FROM documentos WHERE concat(documento_serial, documento_code) = ?", [
@@ -49,10 +48,10 @@ class Filefix implements ToCollection, WithHeadingRow
     public static function convertDateFormat($date)
     {
         try {
-            // Crear una instancia de Carbon desde la fecha proporcionada en el formato 'd/m/Y'
+            // Creamos una instancia de Carbon desde la fecha proporcionada en el formato 'm/d/Y'
             $carbonDate = Carbon::createFromFormat('m/d/Y', trim($date));
 
-            // Convertir la fecha al formato MySQL 'Y-m-d'
+            // Convertimos la fecha al formato MySQL 'Y-m-d'
             $formattedDate = $carbonDate->format('Y-m-d');
 
             return $formattedDate;

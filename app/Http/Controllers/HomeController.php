@@ -8,12 +8,6 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class HomeController extends Controller
 {
-
-    public function pasarfechas()
-    {
-        
-    }
-
     public function fileupload(Request $request)
     {
         $file = $request->file('import_file');

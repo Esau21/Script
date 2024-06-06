@@ -20,6 +20,7 @@
             <div class="col-sm-8">
                 <form action="">
                     <div class="form-group">
+                        <label>Subir un archivo</label>
                         <input type="file" class="form-control">
                     </div>
                 </form>
